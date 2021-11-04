@@ -1,20 +1,18 @@
-public class Patient {
-    private String fName;
-    private String lName;
+public class Patient extends Person{
     private Doctor doctor;
 
     public Patient(String fName, String lName, Doctor doctor) {
-            this.fName = fName;
-            this.lName = lName;
+            this.firstName = fName;
+            this.lastName = lName;
             this.doctor = doctor;
         }
 
         public void setFirstName(String newPatientFirstName){
-            this.fName = newPatientFirstName;
+            this.firstName = newPatientFirstName;
         }
         
         public void setLastName(String newPatientLastName){
-            this.lName = newPatientLastName;
+            this.lastName = newPatientLastName;
         }
         
         public void setDoctor(Doctor newDoctorName){
@@ -26,14 +24,14 @@ public class Patient {
         }
         
         public String getPatientName() {
-                return String.format(fName + " " + lName);
+                return String.format(this.firstName + " " + this.lastName);
         }
         
         public String getDoctorName(){
-            return String.format(HasDoctor.getFirstName() + " " + HasDoctor.getLastName());
+            return String.format(this.getFirstName() + " " + this.getLastName());
         }
 
         public String toString(){
-            return String.format("\t" + fName + "\t\t" + lName + "\t\t" + "Dr." + doctor.getLastName());
+            return String.format("\t" + this.firstName + "\t\t" + this.lastName + "\t\t" + "Dr." + this.getDoctor().getLastName());
         }
 }

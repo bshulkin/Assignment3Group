@@ -1,27 +1,27 @@
+public class Assistant extends Person{
 
-public class Assistant extends HasDoctor{
-
-    private String fName;
-    private String lName;
     private Doctor doctor;
 
     public Assistant(String fName, String lName, Doctor doctor) {
         super();
-        this.fName = fName;
-        this.lName = lName;
+        this.firstName = fName;
+        this.lastName = lName;
         this.doctor = doctor;
     }
 
     public void setFirstName(String newPatientFirstName){
-        this.fName = newPatientFirstName;
+        this.firstName = newPatientFirstName;
     }
     public void setLastName(String newPatientLastName){
-        this.lName = newPatientLastName;
+        this.lastName = newPatientLastName;
     }
     public void setDoctor(Doctor newDoctorName){
         this.doctor = newDoctorName;
     }
+    public Doctor getDoctor(){
+        return doctor;
+    }
     public String toString(){
-        return String.format("\t" + fName + "\t\t" + lName + "\t\t" + "Dr." + doctor.getLastName());//+ Doctor.firstName + " " + Doctor.lastName);
+        return String.format("\t" + this.getFirstName() + "\t\t" + this.getLastName() + "\t\t" + "Dr." + this.getDoctor().getLastName());
     }
 }

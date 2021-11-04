@@ -1,35 +1,25 @@
-public class Doctor {
+public class Doctor extends Person{
     
     private String specialization;
-    private String fName;
-    private String lName;
 
     public Doctor(String fName, String lName, String specialization) {
-        super();
-        this.fName = fName;
-        this.lName = lName;
+        this.firstName = fName;
+        this.lastName = lName;
         this.specialization = specialization;
     }
 
     public void setFirstName(String newPatientFirstName){
-        this.fName = newPatientFirstName;
+        this.firstName = newPatientFirstName;
     }
     public void setLastName(String newPatientLastName){
-        this.lName = newPatientLastName;
+        this.lastName = newPatientLastName;
     }
     public void setSpecialization(String newSpecializaiton){
         specialization = newSpecializaiton;
     }
     
-    public String getLastName(){
-        return lName;
-    }
-    
-    public String getFirstName(){
-        return fName;
-    }
 
     public String toString(){
-        return String.format("\t" + fName + "\t\t" + lName + "\t\t" + specialization);
+        return String.format("\t" + this.getFirstName() + "\t\t" + this.getLastName() + "\t\t" + specialization);
     }
 }
